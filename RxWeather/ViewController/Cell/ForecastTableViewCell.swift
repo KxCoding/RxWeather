@@ -56,9 +56,9 @@ class ForecastTableViewCell: UITableViewCell {
       dateFormatter.dateFormat = "HH:00"
       timeLabel.text = dateFormatter.string(for: data.date)
       
-      weatherImageView.image = UIImage.from(code: data.weatherCode)
+    weatherImageView.image = UIImage.from(name: data.icon)
       
-      statusLabel.text = data.weatherDescription
+      statusLabel.text = data.description
       
       let tempStr = tempFormatter.string(for: data.temperature) ?? "-"
       temperatureLabel.text = "\(tempStr)º"

@@ -44,8 +44,8 @@ class SummaryTableViewCell: UITableViewCell {
     }
 
    func configure(from data: WeatherDataType, tempFormatter: NumberFormatter) {
-      weatherImageView.image = UIImage.from(code: data.weatherCode)
-      statusLabel.text = data.weatherDescription
+      weatherImageView.image = UIImage.from(name: data.icon)
+      statusLabel.text = data.description
       
       let max = data.maxTemperature ?? 0.0
       let min = data.minTemperature ?? 0.0

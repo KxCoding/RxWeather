@@ -36,7 +36,10 @@ extension Scene {
             fatalError()
          }
          
-         vc.bind(viewModel: viewModel)
+        DispatchQueue.main.async {
+            vc.bind(viewModel: viewModel)
+        }
+        
          return vc
       }
    }

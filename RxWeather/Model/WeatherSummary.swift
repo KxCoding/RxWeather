@@ -23,31 +23,25 @@
 import Foundation
 
 struct WeatherSummary: Codable {
-   struct Weather: Codable {
-      struct Minutely: Codable {
-         struct Sky: Codable {
-            let code: String
-            let name: String
-         }
-         
-         struct Temperature: Codable {
-            let tc: String
-            let tmax: String
-            let tmin: String
-         }
-         
-         let sky: Sky
-         let temperature: Temperature
-      }
-      
-      let minutely: [Minutely]
-   }
-   
-   struct Result: Codable {
-      let code: Int
-      let message: String
-   }
-   
-   let weather: Weather
-   let result: Result
+    let dt: Int
+    
+    struct Weather: Codable {
+        let id: Int
+        let main: String
+        let description: String
+        let icon: String
+    }
+    
+    let weather: [Weather]
+    
+    
+    struct Main: Codable {
+        let temp: Double
+        let temp_min: Double
+        let temp_max: Double
+    }
+
+    let main: Main
+
+    
 }
